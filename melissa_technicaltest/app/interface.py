@@ -35,7 +35,7 @@ if st.sidebar.button("Faire une prédiction"):
     values=[asset_building_type, year_financial_info, iq_score, building_quality, O2020_W, O2020_SD0001, O2020_SD0002, O2020_SD0003, O2020_SD0004, O2020_BS, O2020_SD0005, O2020_SD0006, O2020_SD0007, O2020_SD0008, O2020_L, O2020_SD0009, O2020_SD0010, O2020_SD0011]
     inputs= InputData(**dict(zip(InputData.__annotations__.keys(), values)))
     print(inputs.get_info())
-    req= requests.post(url = "http://127.0.0.1:8000/predict/",     headers={
+    req= requests.post(url = "http://app:8000/predict/",     headers={
         'accept': 'application/json',
         'Content-Type': 'application/json'
     }, data = inputs.model_dump_json())
