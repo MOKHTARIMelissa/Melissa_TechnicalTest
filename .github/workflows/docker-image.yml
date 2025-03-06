@@ -19,7 +19,7 @@ jobs:
         sudo chmod +x /usr/local/bin/docker-compose
     - name: Build the Docker image
       run: |
-        docker-compose -f ./melissa_technicaltest/docker-compose.yml up --build
+        docker-compose -f ./melissa_technicaltest/docker-compose.yml up -d --build
 
     - name: push image to docker hub
-      run: docker push MOKHTARIMelissa/melissa_technicaltest_app:latest
+      run: docker push mokhtarimelissa/technicaltest:latest
