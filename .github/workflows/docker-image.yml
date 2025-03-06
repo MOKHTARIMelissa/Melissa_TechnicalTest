@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker-compose -f /chemin/vers/votre/docker-compose.yml up --build -t MOKHTARIMelissa/melissa_technicaltest_app:latest
+      run: docker-compose -f ./melissa_technicaltest/docker-compose.yml up --build -t MOKHTARIMelissa/melissa_technicaltest_app:latest
     - name: push image to docker hub
       run: docker push MOKHTARIMelissa/melissa_technicaltest_app:latest
