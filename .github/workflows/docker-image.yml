@@ -22,7 +22,7 @@ jobs:
         docker-compose -f ./melissa_technicaltest/docker-compose.yml up -d --build
         
     - name: Wait before pushing
-      run: sleep 10
+      run: sleep 100
 
     - name: List Docker images
       run: docker images
