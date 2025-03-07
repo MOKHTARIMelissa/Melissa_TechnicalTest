@@ -32,6 +32,8 @@ jobs:
     - name: Stop containers
       run: docker-compose -f ./melissa_technicaltest/docker-compose.yml down
 
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
     - name: push image to docker hub
       run: docker push mokhtarimelissa/technicaltest:latest
