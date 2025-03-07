@@ -1,6 +1,7 @@
 
 from pydantic import BaseModel
 
+
 class InputData(BaseModel):
     asset_building_type: str
     year_financial_info: int
@@ -26,6 +27,7 @@ class InputData(BaseModel):
 
     def get_info(self):
         return self.asset_building_type
+
 
 """    def __init__(self,values:list):
         # D'abord, créer un dictionnaire des attributs à partir des noms des champs et des valeurs.

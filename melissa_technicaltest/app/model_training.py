@@ -7,6 +7,7 @@ import pickle
 import joblib
 import config
 
+
 def train():
     """S'encharge de l'entrainement d'un modèle de regression sur le dataset en entrée
     """
@@ -54,6 +55,7 @@ def train():
 
     # Sauvegarder le modèle entraîné
     joblib.dump(model, 'model.joblib')
+
 
 if __name__ == "__main__":
     train()

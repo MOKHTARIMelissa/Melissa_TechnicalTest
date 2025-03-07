@@ -4,7 +4,7 @@ from pydantic import BaseModel
 import numpy as np
 from utils import InputData
 
-# Loading the model and the tools for encoding and normalizing
+# Loading du modèle et des outils pour l'encoding et la normalisation
 model_loaded = joblib.load('model.joblib')
 
 with open('tools.pkl', 'rb') as f:
@@ -21,6 +21,7 @@ def model_predict(input_data: InputData):
         float: la prédiction de la valeur financière du bien
     """
     data = input_data.data_wrap()
-    data[0]=labelEncoder.transform(data[0])
-    y_pred_loaded = model_loaded.predict(scaler.transform(np.array(data).reshape(1, -1)))
+    data[0] = labelEncoder.transform(data[0])
+    y_pred_loaded = model_loaded.predict(
+        scaler.transform(np.array(data).reshape(1, -1)))
     return y_pred_loaded[0]
